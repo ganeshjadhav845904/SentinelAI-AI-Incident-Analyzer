@@ -1,166 +1,178 @@
 # SentinelAI – AI-Powered Incident Analyzer
 
-**Intelligent Incident Management, Log Analysis & Root Cause Analysis Platform**
+**An AI-powered IT incident analysis and troubleshooting platform for IT operations and support teams.**
 
-## 1. Project Overview
+SentinelAI helps IT support teams analyze application and system logs, identify recurring errors, assess incident severity, investigate possible root causes, and generate troubleshooting recommendations using Google Gemini AI.
 
-SentinelAI is an AI-powered incident analysis platform designed to help Technology Operations teams analyze application logs, identify errors and warning patterns, classify incident severity, and recommend troubleshooting actions.
+---
 
-The platform combines rule-based log analysis with Google Gemini AI to provide structured incident assessments and evidence-based root cause hypotheses.
+## Dashboard Preview
 
-This prototype uses simulated application logs and a development environment.
+![SentinelAI Operations Dashboard](screenshots/dashboard.png)
 
-## 2. Key Features
+## Log Analyzer
 
-- Upload or paste application logs (`.txt`, `.log`, `.csv`).
-- Detect errors, warnings, failures and timeouts.
-- Identify repeated error patterns.
-- Classify incidents as Critical, High, Medium or Low.
-- Generate AI-powered incident analysis using Google Gemini.
-- Separate confirmed evidence from unverified assumptions.
-- Suggest possible root causes and verification methods.
-- Recommend L1, L2 and L3 troubleshooting actions.
-- Manage incidents with SQLite database persistence.
-- View operational dashboards and incident analytics.
-- Export incident data as CSV and PDF reports.
+Upload or paste log files to identify errors, recurring patterns, and potential issues.
 
-## 3. Technology Stack
+![SentinelAI Log Analyzer](screenshots/log-analyzer.png)
 
-| Technology | Purpose |
+## AI-Powered Incident Analysis
+
+Uses Google Gemini AI to generate incident summaries, possible root causes, troubleshooting steps, and escalation recommendations.
+
+![SentinelAI AI Analysis](screenshots/ai-analysis.png)
+
+## Incident Management
+
+Create and manage incidents, track their severity, and update their status.
+
+![SentinelAI Incident Management](screenshots/incident-management.png)
+
+---
+
+## Project Overview
+
+IT operations teams regularly work with large log files and incident records. Manually identifying errors, understanding patterns, and investigating root causes can take significant time.
+
+SentinelAI provides a centralized dashboard and AI-assisted analysis workflow to make these tasks easier.
+
+## Key Features
+
+- **Operations Dashboard:** Displays incident metrics, severity distribution, recent incidents, and incident trends.
+- **Log Analyzer:** Supports uploading or pasting TXT, LOG, and CSV log data.
+- **Error Detection:** Identifies error keywords, repeated errors, and severity indicators.
+- **AI Analysis:** Uses Google Gemini to generate structured incident analysis.
+- **Root Cause Analysis:** Presents possible causes, supporting evidence, and investigation steps.
+- **Incident Management:** Create incidents, store records, and update incident status.
+- **Reports & Analytics:** View charts and export available reports in CSV, TXT, and PDF formats.
+- **SQLite Database:** Stores incident records locally.
+
+## Technology Stack
+
+| Component | Technology |
 |---|---|
-| Python | Core programming language |
-| Streamlit | Web application interface |
-| Pandas | Log and data processing |
-| Plotly | Interactive charts |
-| SQLite | Incident data storage |
-| Google Gemini API | AI-powered incident analysis |
-| ReportLab | PDF report generation |
+| Programming Language | Python |
+| User Interface | Streamlit |
+| Data Processing | Pandas |
+| Visualization | Matplotlib, Plotly |
+| Database | SQLite |
+| AI Integration | Google Gemini API |
+| PDF Reports | ReportLab |
+| Configuration | Python Dotenv |
 
-## 4. Application Modules
+## AI Analysis Capabilities
 
-1. **Operations Dashboard:** Displays incident statistics, severity distribution and recent incidents.
-2. **Log Analyzer:** Analyzes uploaded or pasted application logs.
-3. **Incident Management:** Creates, stores and updates incident records.
-4. **Root Cause Analysis:** Generates possible root causes with supporting evidence and investigation steps.
-5. **Reports & Analytics:** Provides visual reports and CSV, TXT and PDF exports.
-6. **System Information:** Displays application and development environment details.
+SentinelAI uses Google Gemini AI to assist with:
 
-## 5. AI Integration
+1. Incident summary
+2. Error and log patterns
+3. Severity assessment
+4. Confirmed evidence
+5. Unverified assumptions
+6. Possible root causes
+7. L1, L2, and L3 troubleshooting recommendations
+8. Escalation recommendations
+9. Preventive measures
+10. Final assessment
 
-SentinelAI integrates Google Gemini through the `google-genai` Python SDK.
+**Important:** AI-generated root causes and recommendations are suggestions for investigation. They should be validated by the operations team before taking action.
 
-The AI analysis provides:
-- Incident summary
-- Detected errors and patterns
-- Severity classification
-- Confirmed evidence
-- Unverified assumptions
-- Possible root causes
-- Immediate troubleshooting steps
-- Escalation recommendations
-- Prevention recommendations
-- Final incident assessment
+## Application Workflow
 
-The system is designed to distinguish verified log evidence from possible explanations. AI-generated root causes are treated as hypotheses until independently verified.
+1. Open the SentinelAI application.
+2. Review incident metrics on the Operations Dashboard.
+3. Upload or paste system/application logs.
+4. Run log analysis to identify errors and patterns.
+5. Generate AI-assisted analysis.
+6. Review evidence, possible root causes, and troubleshooting steps.
+7. Create or update incidents.
+8. Generate reports and export results.
 
-## 6. Installation and Setup
+## Installation and Setup
 
-### Prerequisites
-
-- Python 3.12 or later
-- pip
-- Google Gemini API key
-
-### Step 1: Clone the repository
+### 1. Clone the Repository
 
 ```bash
-git clone YOUR_GITHUB_REPOSITORY_URL
-cd PineLabs_AI_Incident_Analyzer
+git clone https://github.com/ganeshjadhav845904/SentinelAI-AI-Incident-Analyzer.git
+cd SentinelAI-AI-Incident-Analyzer
 ```
 
-### Step 2: Create a virtual environment
+### 2. Create a Virtual Environment
 
 ```bash
 python -m venv venv
 ```
 
-### Step 3: Activate the environment
+Activate it on Windows:
 
-Windows:
-
-```bash
+```powershell
 venv\Scripts\activate
 ```
 
-### Step 4: Install dependencies
+### 3. Install Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### Step 5: Configure the API key
+### 4. Configure Gemini API Key
 
 Create a `.env` file in the project root:
 
 ```env
-GEMINI_API_KEY=YOUR_GEMINI_API_KEY
+GEMINI_API_KEY=your_gemini_api_key
 ```
 
-Never publish your actual API key.
+Replace the placeholder with your own Gemini API key.
 
-### Step 6: Run the application
+**Security:** Never upload your actual `.env` file or API key to GitHub.
+
+### 5. Run the Application
 
 ```bash
 streamlit run app.py
 ```
 
-The application will open in your browser at:
+The application will open in your browser.
 
-`http://localhost:8501`
+## Database
 
-## 7. Testing
+SentinelAI uses SQLite for local incident data storage. Incident records are stored locally by the application.
 
-The prototype was tested using simulated application logs covering different operational scenarios.
+## Testing
 
-| Test Scenario | Expected Behaviour |
-|---|---|
-| Database connection errors | Detect errors and suggest investigation |
-| Repeated error messages | Identify recurring patterns |
-| API timeout logs | Detect timeout-related issues |
-| Warning-only logs | Avoid unsupported Critical classification |
-| Incident creation | Save incident in SQLite |
-| Incident status update | Persist updated status |
-| Report generation | Export PDF and CSV reports |
-| Gemini AI analysis | Generate structured incident assessment |
+The application was tested using sample log data and manual workflows, including:
 
-## 8. Assumptions
+- Log upload and analysis
+- Error and severity detection
+- AI-assisted incident analysis
+- Incident creation and status updates
+- Root cause investigation workflow
+- Report generation and export
+- Dashboard and database functionality
 
-- The application uses simulated logs rather than production system data.
-- Log messages are treated as evidence only for what they explicitly establish.
-- Severity may be provisional when actual business impact is unknown.
-- Possible root causes require further investigation and verification.
-- The prototype does not directly monitor live production infrastructure.
+## Limitations
 
-## 9. Limitations
+- AI recommendations depend on the quality and completeness of the supplied logs.
+- Root cause suggestions require human verification.
+- Gemini API access requires a valid API key and internet connectivity.
+- The current project is a prototype and is not presented as a production-ready enterprise monitoring platform.
 
-- AI analysis depends on Gemini API availability and network connectivity.
-- AI-generated recommendations require human review.
-- The prototype does not connect to real payment gateways or production databases.
-- Infrastructure monitoring and automated incident remediation are not implemented.
-- Analysis accuracy depends on the quality and completeness of input logs.
+## Future Enhancements
 
-## 10. Future Enhancements
+- Real-time log monitoring
+- Integration with monitoring platforms
+- Automated incident notifications
+- Role-based access control
+- Advanced anomaly detection
+- Integration with IT Service Management (ITSM) tools
 
-- Real-time log monitoring.
-- Integration with cloud monitoring platforms.
-- Automated incident alerts.
-- ServiceNow or Jira integration.
-- Advanced log correlation and anomaly detection.
-- Role-based access control.
-- Kubernetes and container monitoring.
+## Project Information
 
-## 11. Project Purpose
+**Project Name:** SentinelAI – AI-Powered Incident Analyzer  
+**Category:** AI / IT Operations / Incident Management  
+**Repository:** [GitHub – SentinelAI](https://github.com/ganeshjadhav845904/SentinelAI-AI-Incident-Analyzer)
 
-SentinelAI demonstrates how AI-assisted log analysis, incident classification, evidence-based troubleshooting and structured reporting can support Technology Operations teams in incident investigation and response.
+---
 
-**Project developed as a Technology Operations case-study prototype for Pine Labs.**
+*Developed as an IT Operations case study project.*
