@@ -1,0 +1,28 @@
+# Python virtual environment
+venv/
+env/
+
+# Environment variables and API keys
+.env
+.env.*
+!.env.example
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# SQLite database
+*.db
+*.sqlite
+*.sqlite3
+
+# Streamlit
+.streamlit/secrets.toml
+
+# IDE files
+.vscode/
+.idea/
+
+# Operating system files
+.DS_Store
+Thumbs.db
